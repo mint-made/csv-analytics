@@ -15,7 +15,9 @@ CSV Analytics is an application that enables the user to generate an analytical 
 
 When using the app, the format of the **.csv** data should be the following: A single column of numbers with the header at the top being **"number"**, like the image shown below:
 
-![CSV data format](https://mint-made-ecommerce-template.s3.eu-west-2.amazonaws.com/a5257b4cabb1e3b08fe775615ef50dce)![CSV data format](https://mint-made-ecommerce-template.s3.eu-west-2.amazonaws.com/f0d44698baa070e21bcc5375dc43db54)
+![csv data format](https://user-images.githubusercontent.com/53815961/139601267-29d3cc62-8038-44f4-92cd-5c598d63df66.png)![csv format calc](https://user-images.githubusercontent.com/53815961/139601273-9e9e9dd4-e7e7-4cef-8e4a-4c1ccc2fc650.png)
+
+
 
 ### User Guide
 
@@ -32,11 +34,13 @@ npm install
 node src/app.js
 ```
 
-This should result in the following output from the terminal:
-![Terminal output](https://mint-made-ecommerce-template.s3.eu-west-2.amazonaws.com/9d0418a8b442a2f5bc209b645600f6ac)
-This should generate a **dataReport.csv** in the root of the **/csv-analytics** directory that will look like the following:  
-![enter image description here](https://mint-made-ecommerce-template.s3.eu-west-2.amazonaws.com/25f016025f57f3c945d247e9c82d5c9f)
-![enter image description here](https://mint-made-ecommerce-template.s3.eu-west-2.amazonaws.com/4f44dffaa17f0910a60a2f64211b1268)
+- This should result in the following output from the terminal:
+![terminal-output](https://user-images.githubusercontent.com/53815961/139601283-e77713a1-cd13-4df6-a19b-b463fbfa41e8.png)
+
+- This should generate a **dataReport.csv** in the root of the **/csv-analytics** directory that will look like the following: 
+![data report csv](https://user-images.githubusercontent.com/53815961/139601295-4d54f1a7-79a1-4f83-9aae-b4eb6f1cacf7.png)
+![data-report-calc](https://user-images.githubusercontent.com/53815961/139601302-7f7128f8-d9b7-4be1-b4b2-dd59e16e091d.png)
+
 
 ### Testing
 
