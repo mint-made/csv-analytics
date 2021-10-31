@@ -8,9 +8,9 @@ const convertToCSV = (headers, statisticsArr) => {
 };
 
 // Takes in a numbers array + analytics data and outputs a csv file of the numbers and analysis
-const writeReportToCSVFile = (headersArr, statisticsArr) => {
+const writeReportToCSVFile = (headers, statisticsArr) => {
   const filename = 'dataReport.csv';
-  fs.writeFile(filename, convertToCSV(headersArr, statisticsArr), (error) => {
+  fs.writeFile(filename, convertToCSV(headers, statisticsArr), (error) => {
     if (error) {
       console.log(`${chalk.red.bold(Error)} writing to csv file`, error);
     } else {
@@ -21,4 +21,4 @@ const writeReportToCSVFile = (headersArr, statisticsArr) => {
   });
 };
 
-module.exports = { writeReportToCSVFile };
+module.exports = { writeReportToCSVFile, convertToCSV };
