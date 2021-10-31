@@ -15,7 +15,9 @@ const writeReportToCSVFile = (headers, statisticsArr) => {
       console.log(`${chalk.red.bold(Error)} writing to csv file`, error);
     } else {
       console.log(
-        `Report generated: "${chalk.green.bold.underline(filename)}"`
+        `Report generated in the ${chalk.bold(
+          '/csv-analytics'
+        )} root directory with name: "${chalk.green.bold.underline(filename)}"`
       );
     }
   });
