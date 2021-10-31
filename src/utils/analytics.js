@@ -3,7 +3,7 @@ const chalk = require('chalk');
 const {
   calcNoOfIntegers,
   calcMean,
-  findHighest,
+  findHighestOccurrence,
   findMostCommon,
 } = require('./calculate');
 
@@ -12,15 +12,28 @@ const genStatisticStatement = (numbersArr) => {
     calcNoOfIntegers(numbersArr)
   )} integers with a mean of ${chalk.green.bold.inverse(
     calcMean(numbersArr, 3)
-  )}, highest value of ${chalk.green.bold.inverse(
-    findHighest(numbersArr)
   )}, most common value(s) of ${chalk.green.bold.inverse(
-    findMostCommon(numbersArr).valuesArr.join(' | ')
+    findMostCommon(numbersArr, true).join(' | ')
   )} which occured ${chalk.green.bold.inverse(
-    findMostCommon(numbersArr).noOfOccurrences
+    findHighestOccurrence(numbersArr)
   )} time(s)`;
+};
+
+const generateStatisticArr = (numbersArr) => {
+  return [
+    calcNoOfIntegers(numbersArr),
+    calcMean(numbersArr),
+    findHighestOccurrence(numbersArr),
+    findMostCommon(numbersArr),
+  ];
+};
+
+const generateStatisticHeaders = () => {
+  return 'Total Integers, Mean, Highest Occurrences, Most Common \n';
 };
 
 module.exports = {
   genStatisticStatement,
+  generateStatisticArr,
+  generateStatisticHeaders,
 };

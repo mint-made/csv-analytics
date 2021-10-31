@@ -1,8 +1,12 @@
 const fs = require('fs');
 const csv = require('csv-parser');
 
-const { writeToCSVFile } = require('./utils/writeToCSVFile');
-const { genStatisticStatement } = require('./utils/analytics');
+const { writeReportToCSVFile } = require('./utils/writeToCSVFile');
+const {
+  genStatisticStatement,
+  generateStatisticHeaders,
+  generateStatisticArr,
+} = require('./utils/analytics');
 
 const numbersArr = [];
 
@@ -16,5 +20,8 @@ fs.createReadStream('smallData.csv')
   })
   .on('end', () => {
     console.log(genStatisticStatement(numbersArr));
-    writeToCSVFile(numbersArr);
+    writeReportToCSVFile(
+      generateStatisticHeaders(),
+      generateStatisticArr(numbersArr)
+    );
   });
