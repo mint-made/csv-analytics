@@ -7,13 +7,15 @@ const calcMean = (numbersArr, dp = 3) => {
     return total + amount;
   });
   const mean = total / numbersArr.length;
+  console.log(mean.toFixed(dp));
   return mean.toFixed(dp);
 };
 
-/**Hashmap starts as an empty object and for each number in the array, we will check if this number
- * is already in the object, if not a key-value pair will be added to the object e.g. {"137": 1} and
- * if already in the object the value of that key will be increased by 1.
- * Hashmap will look like this { '186': 1, '187': 2, '284': 1, '327': 2, '-368': 1, '-616': 1 }*/
+/**Hashmap starts as an empty object and for each number in the array,
+ *  we will check if this number is already in the object, if not a
+ * key-value pair will be added to the object e.g. {"137": 1} and if
+ * already in the object the value of that key will be increased by 1.
+ * Hashmap will look like this { '186': 1, '437': 2, '-616': 1 }*/
 const generateHashMap = (numbersArr) => {
   return numbersArr.reduce((acc, val) => {
     acc[val] = (acc[val] || 0) + 1;
@@ -45,6 +47,10 @@ const findMostCommon = (numbersArr, arrayOfValues = false) => {
   }
 };
 
+/** Finds the integer with the highest occurance in the array and
+ * reads it's value in the hashmap that contains the number of times
+ * in the array that it occured
+ */
 const findHighestOccurrence = (numbersArr) => {
   const hashmap = generateHashMap(numbersArr);
   const mostCommonKey = Object.keys(hashmap).reduce((a, b) => {

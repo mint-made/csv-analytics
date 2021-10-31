@@ -1,4 +1,5 @@
 const fs = require('fs');
+const chalk = require('chalk');
 
 // Takes in a numbers array and returns the numbers in a csv formatted string
 const convertToCSV = (headers, statisticsArr) => {
@@ -11,9 +12,11 @@ const writeReportToCSVFile = (headersArr, statisticsArr) => {
   const filename = 'dataReport.csv';
   fs.writeFile(filename, convertToCSV(headersArr, statisticsArr), (error) => {
     if (error) {
-      console.log('Error writing to csv file', error);
+      console.log(`${chalk.red.bold(Error)} writing to csv file`, error);
     } else {
-      console.log(`Output saved as: "${filename}"`);
+      console.log(
+        `Report generated: "${chalk.green.bold.underline(filename)}"`
+      );
     }
   });
 };
