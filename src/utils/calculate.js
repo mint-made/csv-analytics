@@ -7,7 +7,6 @@ const calcMean = (numbersArr, dp = 3) => {
     return total + amount;
   });
   const mean = total / numbersArr.length;
-  console.log(mean.toFixed(dp));
   return mean.toFixed(dp);
 };
 
@@ -72,4 +71,6 @@ module.exports = {
   calcMean,
   findMostCommon,
   findHighestOccurrence,
+  findLowest,
+  findHighest,
 };

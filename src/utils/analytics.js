@@ -5,6 +5,8 @@ const {
   calcMean,
   findHighestOccurrence,
   findMostCommon,
+  findHighest,
+  findLowest,
 } = require('./calculate');
 
 const genStatisticStatement = (numbersArr) => {
@@ -25,11 +27,13 @@ const generateStatisticArr = (numbersArr) => {
     calcMean(numbersArr),
     findHighestOccurrence(numbersArr),
     findMostCommon(numbersArr),
+    findHighest(numbersArr),
+    findLowest(numbersArr),
   ];
 };
 
 const generateStatisticHeaders = () => {
-  return 'Total Integers, Mean, Highest Occurrences, Most Common \n';
+  return 'Total Integers, Mean, Highest Occurrences, Most Common, Highest, Lowest \n';
 };
 
 module.exports = {

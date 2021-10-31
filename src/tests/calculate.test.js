@@ -3,6 +3,8 @@ const {
   calcMean,
   findHighestOccurrence,
   findMostCommon,
+  findLowest,
+  findHighest,
 } = require('../utils/calculate');
 
 const testData = [15, 2, 4, 2, 27, 186, -49, 15, 15, -89];
@@ -21,4 +23,12 @@ test('The highest occurrence of an integer in the test data is 15', () => {
 
 test('The most common integer is 15 in the test data', () => {
   expect(findMostCommon(testData)).toBe('15');
+});
+
+test('The highest integer in the test data is 186', () => {
+  expect(findHighest(testData)).toBe(186);
+});
+
+test('The Lowest integer in the test data is -89', () => {
+  expect(findLowest(testData)).toBe(-89);
 });

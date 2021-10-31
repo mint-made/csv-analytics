@@ -13,7 +13,7 @@ const numbersArr = [];
 /**Creates a readstream, so the data can be read and piped to
  *  the csv function (csv-parser package), from which we can write
  * the data to the numberArr variable */
-fs.createReadStream('data.csv')
+fs.createReadStream('smallData.csv')
   .pipe(csv())
   .on('data', (row) => {
     numbersArr.push(Number(row.number));
